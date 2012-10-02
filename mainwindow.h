@@ -6,6 +6,7 @@
 #include <QGraphicsScene>
 #include <QString>
 #include <QFileDialog>
+#include <QPixmap>
 
 namespace Ui {
 class MainWindow;

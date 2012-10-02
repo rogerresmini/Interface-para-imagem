@@ -10,7 +10,7 @@ MainWindow::MainWindow(QWidget *parent) :
     view = new QGraphicsView(ui->graphicsView);
     scene = new QGraphicsScene();
 
-    connect()
+    connect(ui->pushButton, SIGNAL(clicked()), this, SLOT(loadImage()));
 }
 
 MainWindow::~MainWindow()
@@ -18,10 +18,12 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-MainWindow::loadImage(){
-    imgPath = QFileDialog(this, "Abrir Imagem", QDir::currentPath(), tr(".png .jpg .jpeg"));
+void MainWindow::loadImage(){
+    imgPath = QFileDialog::getOpenFileName(this, tr("Abrir Imagem"), QDir::currentPath(), tr("Images (*.png *.jpeg *.jpg *.gif)"));
 
-    //view->set
+
+    QPixmap img(imgPath, 0, Qt::AutoColor);
+    scene->addPixmap(img);
 
     view->setScene(scene);
 }
