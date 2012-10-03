@@ -11,7 +11,7 @@ MainWindow::MainWindow(QWidget *parent) :
     scene = new QGraphicsScene();
 
     connect(ui->pushButton, SIGNAL(clicked()), this, SLOT(loadImage()));
-    //modifiquei aqui
+    //modifiquei aqui modi
 }
 
 MainWindow::~MainWindow()
